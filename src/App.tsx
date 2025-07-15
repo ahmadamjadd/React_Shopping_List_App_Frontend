@@ -36,11 +36,20 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-10">
-      <h1 className="text-2xl font-bold mb-4">🛒 Shopping List</h1>
-      {error && <p className="text-red-500 mb-4">{error}</p>}
-      <AddItemForm onAdd={handleAddItem} />
-      <ShoppingList items={items} onDelete={handleDeleteItem} />
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-purple-100">
+      <div className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-lg">
+        <h1 className="text-3xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500 mb-6">
+          🛒 Shopping List
+        </h1>
+        {error && (
+          <p className="text-red-500 mb-4 text-center">{error}</p>
+        )}
+        <AddItemForm onAdd={handleAddItem} />
+        <div className="mt-6">
+          <ShoppingList items={items} onDelete={handleDeleteItem} />
+        </div>
+      </div>
     </div>
   );
+  
 };

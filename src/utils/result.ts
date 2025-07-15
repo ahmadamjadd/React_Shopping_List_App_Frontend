@@ -23,10 +23,6 @@ class Ok<T, E> {
     return fn(this.value);
   }
 
-  mapErr<F>(_fn: (error: E) => F): Result<T, F> {
-    return Result.Ok(this.value);
-  }
-
   unwrap(): T {
     return this.value;
   }
